@@ -16,12 +16,7 @@ class StreamList extends React.Component {
   };
 
   render() {
-    return (
-      <div>
-        <h1>Tasks</h1>
-        <div>{this.renderTasks()}</div>
-      </div>
-    );
+    return this.renderTasks();
   }
 }
 

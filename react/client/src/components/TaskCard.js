@@ -1,11 +1,25 @@
 import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
 
-const TaskCard = ({ task }) => {
+const styles = () => ({
+  card: {
+    margin: '8px 0'
+  }
+});
+
+const TaskCard = ({ task, classes }) => {
   return (
-    <div>
-      <h3>{task.title}</h3>
-    </div>
+    <Card className={classes.card}>
+      <CardContent>
+        <Typography variant="h6" color="textPrimary" gutterBottom>
+          {task.title}
+        </Typography>
+      </CardContent>
+    </Card>
   );
 };
 
-export default TaskCard;
+export default withStyles(styles)(TaskCard);
