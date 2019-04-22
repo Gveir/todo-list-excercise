@@ -1,4 +1,4 @@
-import { FETCH_TASKS } from './types';
+import { FETCH_TASKS, TOGGLE_COMPLETE } from './types';
 
 export const fetchTasks = () => {
   return {
@@ -13,5 +13,12 @@ export const fetchTasks = () => {
         dueDate: new Date(2019, 4, 15)
       }
     ]
+  };
+};
+
+export const toggleComplete = task => {
+  return {
+    type: TOGGLE_COMPLETE,
+    task
   };
 };

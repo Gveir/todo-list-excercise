@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { fetchTasks } from '../actions';
 import TaskCard from './TaskCard';
 
-class StreamList extends React.Component {
+class TaskList extends React.Component {
   componentDidMount() {
     this.props.fetchTasks();
   }
@@ -29,4 +29,4 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   { fetchTasks }
-)(StreamList);
+)(TaskList);
