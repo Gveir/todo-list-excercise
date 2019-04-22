@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { FETCH_TASKS, TOGGLE_COMPLETE } from '../actions/types';
+import { FETCH_TASKS, TOGGLE_COMPLETE, DELETE_TASK } from '../actions/types';
 
 export default (state = {}, action) => {
   switch (action.type) {
@@ -12,6 +12,8 @@ export default (state = {}, action) => {
         ...state,
         ..._.mapKeys([{ ...task, completed: !task.completed }], 'id')
       };
+    case DELETE_TASK:
+      return _.omit(state, action.task.id);
     default:
       return state;
   }

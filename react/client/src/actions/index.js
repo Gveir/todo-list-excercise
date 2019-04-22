@@ -1,4 +1,4 @@
-import { FETCH_TASKS, TOGGLE_COMPLETE } from './types';
+import { FETCH_TASKS, TOGGLE_COMPLETE, DELETE_TASK } from './types';
 
 export const fetchTasks = () => {
   return {
@@ -19,6 +19,13 @@ export const fetchTasks = () => {
 export const toggleComplete = task => {
   return {
     type: TOGGLE_COMPLETE,
+    task
+  };
+};
+
+export const deleteTask = task => {
+  return {
+    type: DELETE_TASK,
     task
   };
 };
