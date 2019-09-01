@@ -5,6 +5,9 @@ import Icon from '@material-ui/core/Icon';
 import IconButton from '@material-ui/core/IconButton';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import { ThemeProvider } from '@material-ui/styles';
+import { createMuiTheme } from '@material-ui/core/styles';
+import green from '@material-ui/core/colors/green';
 
 import TaskList from './TaskList';
 
@@ -18,21 +21,30 @@ const styles = () => ({
   }
 });
 
+const theme = createMuiTheme({
+  palette: {
+    primary: green,
+    secondary: green
+  }
+});
+
 const App = props => {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" color="inherit" className={classes.title}>
-            Tasks
-          </Typography>
-          <IconButton color="inherit">
-            <Icon fontSize="large">add</Icon>
-          </IconButton>
-        </Toolbar>
-      </AppBar>
-      <TaskList />
+      <ThemeProvider theme={theme}>
+        <AppBar position="static">
+          <Toolbar>
+            <Typography variant="h6" color="inherit" className={classes.title}>
+              Tasks
+            </Typography>
+            <IconButton color="error">
+              <Icon fontSize="large">add</Icon>
+            </IconButton>
+          </Toolbar>
+        </AppBar>
+        <TaskList />
+      </ThemeProvider>
     </div>
   );
 };

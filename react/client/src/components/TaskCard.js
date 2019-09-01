@@ -9,6 +9,7 @@ import Grid from '@material-ui/core/Grid';
 import Icon from '@material-ui/core/Icon';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
+import red from '@material-ui/core/colors/red';
 
 import { toggleComplete, deleteTask } from '../actions';
 
@@ -21,6 +22,9 @@ const styles = () => ({
   },
   titleCompleted: {
     textDecoration: 'line-through'
+  },
+  deleteIcon: {
+    color: red[700]
   }
 });
 
@@ -91,12 +95,10 @@ class TaskCard extends React.Component {
               </IconButton>
             </Grid>
             <Grid item>
-              <IconButton
-                id="task-delete"
-                color="secondary"
-                onClick={this.onTaskDeleteClicked}
-              >
-                <Icon fontSize="small">delete</Icon>
+              <IconButton id="task-delete" onClick={this.onTaskDeleteClicked}>
+                <Icon fontSize="small" className={classes.deleteIcon}>
+                  delete
+                </Icon>
               </IconButton>
             </Grid>
           </Grid>
