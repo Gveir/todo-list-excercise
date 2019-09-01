@@ -18,7 +18,9 @@ import TaskEdit from './tasks/TaskEdit';
 const styles = () => ({
   root: {
     maxWidth: 1024,
-    margin: 'auto'
+    margin: 'auto',
+    position: 'relative',
+    height: '97vh'
   }
 });
 
