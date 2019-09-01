@@ -92,7 +92,7 @@ class TaskCard extends React.Component {
         <CardActions>
           <Grid container direction="row" justify="flex-end" spacing={0}>
             <Grid item>
-              <IconButton id="task-edit">
+              <IconButton href={`edit/${task.id}`} id="task-edit">
                 <Icon fontSize="small">edit</Icon>
               </IconButton>
             </Grid>

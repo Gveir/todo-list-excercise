@@ -1,5 +1,13 @@
-import { FETCH_TASKS, TOGGLE_COMPLETE, DELETE_TASK } from './types';
+import { FETCH_TASK, FETCH_TASKS, TOGGLE_COMPLETE, DELETE_TASK } from './types';
 
+export const fetchTask = (id) => {
+  return {
+    type: FETCH_TASK,
+    payload: {
+      id: id, title: 'Task', completed: false, dueDate: null
+    }
+  }
+}
 export const fetchTasks = () => {
   return {
     type: FETCH_TASKS,

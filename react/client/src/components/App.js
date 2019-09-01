@@ -13,6 +13,7 @@ import history from '../history';
 import ApplicationBar from './ApplicationBar';
 import TaskList from './tasks/TaskList';
 import TaskCreate from './tasks/TaskCreate';
+import TaskEdit from './tasks/TaskEdit';
 
 const styles = () => ({
   root: {
@@ -37,6 +38,7 @@ const App = ({ classes }) => {
             <Route path="/" component={ApplicationBar} />
             <Route path="/" exact component={TaskList} />
             <Route path="/new" exact component={TaskCreate} />
+            <Route path="/edit/:id" exact component={TaskEdit} />
           </Router>
         </MuiPickersUtilsProvider>
       </ThemeProvider>
