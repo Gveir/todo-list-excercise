@@ -1,49 +1,44 @@
 import React from 'react';
+import { Router, Route } from 'react-router-dom';
+import MomentUtils from '@date-io/moment';
+
 import { withStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Icon from '@material-ui/core/Icon';
-import IconButton from '@material-ui/core/IconButton';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import { ThemeProvider } from '@material-ui/styles';
 import { createMuiTheme } from '@material-ui/core/styles';
 import green from '@material-ui/core/colors/green';
+import orange from '@material-ui/core/colors/orange';
+import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 
-import TaskList from './TaskList';
+import history from '../history';
+import ApplicationBar from './ApplicationBar';
+import TaskList from './tasks/TaskList';
+import TaskCreate from './tasks/TaskCreate';
 
 const styles = () => ({
   root: {
     maxWidth: 1024,
     margin: 'auto'
-  },
-  title: {
-    flexGrow: 1
   }
 });
 
 const theme = createMuiTheme({
   palette: {
     primary: green,
-    secondary: green
+    secondary: orange
   }
 });
 
-const App = props => {
-  const { classes } = props;
+const App = ({ classes }) => {
   return (
     <div className={classes.root}>
       <ThemeProvider theme={theme}>
-        <AppBar position="static">
-          <Toolbar>
-            <Typography variant="h6" color="inherit" className={classes.title}>
-              Tasks
-            </Typography>
-            <IconButton color="error">
-              <Icon fontSize="large">add</Icon>
-            </IconButton>
-          </Toolbar>
-        </AppBar>
-        <TaskList />
+        <MuiPickersUtilsProvider utils={MomentUtils}>
+          <Router history={history}>
+            <Route path="/" component={ApplicationBar} />
+            <Route path="/" exact component={TaskList} />
+            <Route path="/new" exact component={TaskCreate} />
+          </Router>
+        </MuiPickersUtilsProvider>
       </ThemeProvider>
     </div>
   );

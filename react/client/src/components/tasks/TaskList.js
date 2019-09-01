@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { fetchTasks } from '../actions';
+import { fetchTasks } from '../../actions';
 import TaskCard from './TaskCard';
 
 class TaskList extends React.Component {

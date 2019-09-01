@@ -2,23 +2,25 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 import compose from 'recompose/compose';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Grid from '@material-ui/core/Grid';
-import Icon from '@material-ui/core/Icon';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
+import {
+  Card,
+  CardActions,
+  CardContent,
+  Grid,
+  Icon,
+  IconButton,
+  Typography
+} from '@material-ui/core';
 import red from '@material-ui/core/colors/red';
 
-import { toggleComplete, deleteTask } from '../actions';
+import { toggleComplete, deleteTask } from '../../actions';
 
-const styles = () => ({
+const styles = theme => ({
   card: {
-    margin: '8px 0'
+    marginTop: theme.spacing(2)
   },
   cardContent: {
-    padding: '4px'
+    padding: theme.spacing(1)
   },
   titleCompleted: {
     textDecoration: 'line-through'
