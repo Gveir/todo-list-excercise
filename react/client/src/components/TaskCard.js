@@ -39,7 +39,7 @@ class TaskCard extends React.Component {
         <CardContent className={classes.cardContent}>
           <Grid
             container
-            spacing={8}
+            spacing={0}
             alignItems="flex-start"
             direction="column"
           >
@@ -84,16 +84,22 @@ class TaskCard extends React.Component {
           </Grid>
         </CardContent>
         <CardActions>
-          <IconButton id="task-edit">
-            <Icon fontSize="small">edit</Icon>
-          </IconButton>
-          <IconButton
-            id="task-delete"
-            color="secondary"
-            onClick={this.onTaskDeleteClicked}
-          >
-            <Icon fontSize="small">delete</Icon>
-          </IconButton>
+          <Grid container direction="row" justify="flex-end" spacing={0}>
+            <Grid item>
+              <IconButton id="task-edit">
+                <Icon fontSize="small">edit</Icon>
+              </IconButton>
+            </Grid>
+            <Grid item>
+              <IconButton
+                id="task-delete"
+                color="secondary"
+                onClick={this.onTaskDeleteClicked}
+              >
+                <Icon fontSize="small">delete</Icon>
+              </IconButton>
+            </Grid>
+          </Grid>
         </CardActions>
       </Card>
     );
