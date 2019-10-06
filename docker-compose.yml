@@ -1,0 +1,13 @@
+version: '3'
+services:
+  backend:
+    build:
+      context: ./backend/TodoList
+    ports:
+      - "44344:443"
+
+  frontend:
+    build:
+      context: ./react/client
+    ports:
+      - "5000:80"
