@@ -9,7 +9,7 @@ import {
 } from './types';
 
 export const fetchTask = id => async dispatch => {
-  const response = await tasks.get(`/tasks${id}`)
+  const response = await tasks.get(`/tasks/${id}`)
 
   dispatch({ type: FETCH_TASK, payload: response.data })
 }

@@ -82,7 +82,7 @@ class TaskCard extends React.Component {
                 <Grid item />
                 <Grid item>
                   <Typography variant="body2">
-                    Due date: {task.dueDate.toLocaleDateString()}
+                    Due date: {new Date(task.dueDate).toLocaleDateString()}
                   </Typography>
                 </Grid>
               </Grid>
