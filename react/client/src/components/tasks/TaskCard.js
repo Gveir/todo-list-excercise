@@ -63,13 +63,13 @@ class TaskCard extends React.Component {
                   onClick={() => this.onTaskCompleteClicked()}
                 >
                   <Icon fontSize="large">
-                    {task.completed ? 'check_box' : 'check_box_outline_blank'}
+                    {task.isCompleted ? 'check_box' : 'check_box_outline_blank'}
                   </Icon>
                 </IconButton>
               </Grid>
               <Grid item>
                 <Typography
-                  className={task.completed ? classes.titleCompleted : ''}
+                  className={task.isCompleted ? classes.titleCompleted : ''}
                   variant="h6"
                   color="textPrimary"
                 >

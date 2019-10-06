@@ -4,7 +4,7 @@ import TaskForm from './TaskForm';
 
 const newTask = {
   title: '',
-  completed: false,
+  isCompleted: false,
   dueDate: null
 };
 

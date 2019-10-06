@@ -14,7 +14,7 @@ export default (state = {}, action) => {
       const { task } = action;
       return {
         ...state,
-        ..._.mapKeys([{ ...task, completed: !task.completed }], 'id')
+        ..._.mapKeys([{ ...task, isCompleted: !task.isCompleted }], 'id')
       };
     default:
       return state;
